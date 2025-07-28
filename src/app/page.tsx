@@ -10,13 +10,13 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { Loader2 } from 'lucide-react'
-import { getAirdropAllocations } from '@/lib/zora'
+import { getAirdropAllocations, WalletAllocation } from '@/lib/zora'
 import { Textarea } from '@/components/ui/textarea'
 import { useState } from 'react'
 
 export default function Home() {
   const [address, setAddress] = useState('')
-  const [result, setResult] = useState(null)
+  const [result, setResult] = useState<WalletAllocation[] | null>(null)
   const [loading, setLoading] = useState(false)
 
   const handleSearch = async () => {
